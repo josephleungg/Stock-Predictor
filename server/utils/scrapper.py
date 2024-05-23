@@ -17,7 +17,13 @@ def scrape_shares(ticker):
         return
 
     soup = BeautifulSoup(page.text, 'html.parser')
-    shares_table_rows = soup.table.table.find_all('tr')
+
+    # making sure the ticker symbol exists
+    try:
+        shares_table_rows = soup.table.table.find_all('tr')
+    except:
+        print("Ticker Symbol not found")
+        return
 
     # write each cell in the table to a list
     row_data = []
@@ -32,3 +38,5 @@ def scrape_shares(ticker):
         writer.writerows(row_data)
 
     print('Scraping Successful')
+
+scrape_shares("vrsn")
