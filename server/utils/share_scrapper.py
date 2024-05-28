@@ -105,5 +105,5 @@ def find_marketcap(ticker, df):
 
     print('Marketcap data saved to csv file')
 
-dataframe = scrape_shares("TSLA")
-find_marketcap("TSLA", dataframe)
+dataframe = scrape_shares("GOOGL")
+find_marketcap("GOOGL", dataframe)
