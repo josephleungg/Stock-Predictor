@@ -16,6 +16,7 @@ def get_cik(ticker):
 
 # function to get the SEC financial reports of a company
 def sec_filings(ticker):
+
     ticker_symbol = ticker.upper()
 
     # grab CIK and fill leading zeroes
@@ -26,11 +27,8 @@ def sec_filings(ticker):
     # used to check the key names for category of data
     print(filingData['facts']['us-gaap'].keys())
 
-    # AccountsPayableCurrent
-
-    # Data for Accounts Payable
-    for accountsPayable in filingData['facts']['us-gaap']['AccountsPayableCurrent']['units']['USD']:
-        print(accountsPayable['val'])
+    # this is how to grab the data from the json api
+    print(filingData['facts']['us-gaap']['AccountsReceivableNetCurrent']['units']['USD'])
 
     return
 
